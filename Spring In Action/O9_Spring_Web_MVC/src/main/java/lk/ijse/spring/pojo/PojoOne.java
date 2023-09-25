@@ -5,6 +5,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class PojoOne {
     public PojoOne(){
-        System.out.println(" 1 Pojo One Instantiated");
+        System.out.println("Pojo One Instantiated");
     }
 }
