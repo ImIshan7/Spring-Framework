@@ -10,7 +10,7 @@ public class PojoFour implements InitializingBean {
     @Value("${user.name}")
     private String userName;
 
-    @Value("${os.name}")
+    @Value("${os.name")
     private String osName;
 
 
