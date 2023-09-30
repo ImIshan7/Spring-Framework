@@ -1,44 +1,41 @@
-package lk.ijse.spring.config;
+package lk.ijse.spring.controller;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.bind.annotation.RestController;
 
-@EnableWebMvc
-@Configuration
-@ComponentScan(basePackages = {"lk.ijse.spring.pojo","lk.ijse.spring.controller"})
-public class WebAppConfig implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
+@RestController
+public class MyController implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
 
-    public WebAppConfig(){
-        System.out.println("AppConfig One Instantiated");
+    public MyController(){
+        System.out.println("My Controller");
     }
+
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-
+        System.out.println("Bean Factory");
     }
 
     @Override
     public void setBeanName(String s) {
-
+        System.out.println("Bean Name");
     }
 
     @Override
     public void destroy() throws Exception {
-
+        System.out.println("Destroy Factory");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-
+        System.out.println(" Factory");
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-
+        System.out.println("Set Application");
     }
 }
