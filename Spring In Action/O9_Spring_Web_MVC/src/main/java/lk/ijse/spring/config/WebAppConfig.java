@@ -20,25 +20,32 @@ public class WebAppConfig implements BeanNameAware, BeanFactoryAware, Applicatio
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
 
+        System.out.println("AppConfig One : Bean Factory Awareness");
+
     }
 
     @Override
     public void setBeanName(String s) {
+
+        System.out.println("AppConfig One : Bean Name Awareness");
 
     }
 
     @Override
     public void destroy() throws Exception {
 
+        System.out.println("AppConfig One : Disposable Bean");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
 
+        System.out.println("AppConfig One : Initializing Bean");
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 
+        System.out.println("AppConfig One : Application Context Awareness");
     }
 }

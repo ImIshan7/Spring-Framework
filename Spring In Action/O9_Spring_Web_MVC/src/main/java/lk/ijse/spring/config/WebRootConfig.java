@@ -16,21 +16,26 @@ public class WebRootConfig implements BeanNameAware, BeanFactoryAware, Applicati
 
     @Override
     public void setBeanName(String s) {
+        System.out.println("");
 
     }
 
     @Override
     public void destroy() throws Exception {
+        System.out.println("");
 
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        System.out.println("");
 
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+
+        System.out.println("");
 
     }
 }
