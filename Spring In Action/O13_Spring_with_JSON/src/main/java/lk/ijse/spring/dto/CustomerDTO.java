@@ -12,7 +12,7 @@ public class CustomerDTO {
     private String id;
     private String name;
     private String address;
-    private String salary;
+    private double salary;
     private String tp;
     private ArrayList<ItemDTO> items;
 }
