@@ -1,42 +1,48 @@
 package lk.ijse.spring.controller;
 
-import lk.ijse.spring.dao.ItemDAO;
-import lk.ijse.spring.entity.Item;
+
+import lk.ijse.spring.dto.ItemDTO;
+
+import lk.ijse.spring.service.ItemService;
+import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/item")
 public class ItemController {
 
     @Autowired
-    ItemDAO itemDAO;
+    ItemService Iservice;
 
     @PostMapping
-    public void addItem(Item dto){
-        itemDAO.save(dto);
+    public ResponseUtil addItem(ItemDTO dto){
+        Iservice.addItem(dto);
+        return new ResponseUtil("Ok","Successfully Added",dto);
     }
 
     @DeleteMapping(params = {"code"})
-    public void deleteItem(String code){
-        itemDAO.deleteById(code);
+    public ResponseUtil deleteItem(String code){
+        Iservice.deleteItem(code);
+        return new ResponseUtil("Ok","Successfully Deleted",code);
     }
 
     @GetMapping
-    public List<Item> getAllItems(){
-        return itemDAO.findAll();
+    public ResponseUtil getAllItem(){
+        return new ResponseUtil("Ok","Successfully Loaded",Iservice.getAllItems());
     }
 
     @GetMapping(params = {"code"})
-    public Item findItem(String code){
-        return itemDAO.findById(code).get();
+    public ResponseUtil findItem(String code){
+        return new ResponseUtil("Ok","Successfully", Iservice.findItem(code));
     }
 
     @PutMapping
-    public void updateItem(@RequestBody Item i){
-        itemDAO.save(i);
+    public ResponseUtil updateItem(@RequestBody ItemDTO c){
+        Iservice.updateItem(c);
+        return new ResponseUtil("Ok","Successfully Updated",c);
     }
 
 
