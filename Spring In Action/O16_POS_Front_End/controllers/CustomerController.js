@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/jpa/";
+const BASE_URL = "http://localhost:8082/O14_Spring_Data_JPA_war/";
 
 //load all existing customers
 getAllCustomers();

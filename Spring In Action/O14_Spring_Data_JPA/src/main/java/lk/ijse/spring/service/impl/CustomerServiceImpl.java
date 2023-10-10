@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
-@Transactional
 @Service
+@Transactional
 public class CustomerServiceImpl implements CustomerService {
     @Autowired
     CustomerRepo customerRepo;
@@ -22,9 +21,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Autowired
     ModelMapper mapper;
 
-    public CustomerServiceImpl() {
-        System.out.println("CustomerServiceImpl Instantiated");
-    }
 
     @Override
     public void addCustomer(CustomerDTO dto) {

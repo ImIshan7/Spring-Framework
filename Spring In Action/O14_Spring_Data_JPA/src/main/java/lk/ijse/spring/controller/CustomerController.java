@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
+@CrossOrigin
 public class CustomerController {
 
 
@@ -36,7 +37,7 @@ public class CustomerController {
 
     @GetMapping(params = {"id"})
     public ResponseUtil findCustomer(String id){
-        return new ResponseUtil("Ok","Successfull", service.findCustomer(id));
+        return new ResponseUtil("Ok","Successfully", service.findCustomer(id));
     }
 
     @PutMapping
